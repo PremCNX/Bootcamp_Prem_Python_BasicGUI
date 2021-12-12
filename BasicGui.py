@@ -8,7 +8,7 @@ import csv
 
 GUI = Tk()
 GUI.geometry('600x700')
-GUI.title('โปรแกรมของ เปรม')
+GUI.title('โปรแกรมของ เปรม V.0.0.1')   
 
 file = PhotoImage(file='durian.png')
 IMG = Label(GUI,image=file,text='')
@@ -18,14 +18,13 @@ IMG.pack()
 L1 = Label(GUI,text='โปรแกรมคำนวณทุเรียน',font = ('Cordia New',30,'bold'), fg = 'green')
 L1.pack() #.place(x,y) .grid(row=)
 
-L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน',font= ('Cordia New',25))
+L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน (กิโลกรัม)',font= ('Cordia New',25))
 L2.pack()
 
 v_quantity = StringVar() 
 
 E1 = ttk.Entry(GUI,textvariable = v_quantity,font=('Cordia New',20))
 E1.pack()
-
 
 
 def timestamp(thai=True):
@@ -103,5 +102,8 @@ def SummaryData(event):
 
 
 GUI.bind('<F1>',SummaryData)
+GUI.bind('<F2>',SummaryData)   # add F2 key to also see summary
+
 E1.focus() #ให้ cursur ไปยังตำแหน่งของ E1
 GUI.mainloop()
+
